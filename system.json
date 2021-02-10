@@ -1,0 +1,99 @@
+{
+  "name": "miasmaAndMonsters",
+  "title": "miasmaAndMonsters",
+  "description": "miasmaAndMonsters for Foundry VTT with built in Item Compendiums and Automatic Character Generation!",
+  "version": "1.2.0",
+  "minimumCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "0.7.5",
+  "templateVersion": 2,
+  "author": "Aidymouse",
+  "esmodules": ["module/miasmaAndMonsters.js"],
+  "styles": ["css/miasmaAndMonsters.css"],
+  "scripts": [],
+  "packs": [
+    {
+      "name": "armor",
+      "label": "Armor",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/armor.db",
+      "entity": "Item"
+    },
+    {
+      "name": "bestiary",
+      "label": "Bestiary",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/bestiary.db",
+      "entity": "Actor"
+    },
+    {
+      "name": "dungeoneering-gear",
+      "label": "Dungeoneering Gear",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/dungeoneering-gear.db",
+      "entity": "Item"
+    },
+    {
+      "name": "character-generation-tables",
+      "label": "Character Generation Tables",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/character-generation-tables.db",
+      "entity": "RollTable"
+    },
+
+    {
+      "name": "general-gear-1",
+      "label": "General Gear 1",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/general-gear-1.db",
+      "entity": "Item"
+    },
+    {
+      "name": "general-gear-2",
+      "label": "General Gear 2",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/general-gear-2.db",
+      "entity": "Item"
+    },
+    {
+      "name": "rules-of-miasmaAndMonsters",
+      "label": "Rules of miasmaAndMonsters",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/rules-of-miasmaAndMonsters.db",
+      "entity": "Item"
+    },
+    {
+      "name": "tools-and-gear",
+      "label": "Tools and Gear",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/tools-and-gear.db",
+      "entity": "Item"
+    },
+    {
+      "name": "Weapons and Armor",
+      "label": "Weapons and Armor",
+      "system": "miasmaAndMonsters",
+      "path": "./packs/weapons-and-armor.db",
+      "entity": "Item"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    }
+
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "url": "https://gitlab.com/Aidymouse/miasmaAndMonsters-foundryvtt",
+  "manifest": "https://gitlab.com/Aidymouse/miasmaAndMonsters-foundryvtt/system.json",
+  "download": "https://gitlab.com/Aidymouse/miasmaAndMonsters-foundryvtt/-/archive/release-1.2.0/miasmaAndMonsters-release-1.2.0.zip",
+  "license": "LICENSE.txt"
+}

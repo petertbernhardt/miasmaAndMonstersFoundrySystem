@@ -1,0 +1,195 @@
+<form class="{{cssClass}} miasmaAndMonsters-sheet-grid" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <section class="left-col">
+
+    <div class="left-row header-row">
+      <p>{{localize "mainSheet.leftColumn.defenseLabel"}}</p>
+      <p>{{localize "mainSheet.leftColumn.abilityLabel"}}</p>
+      <p>{{localize "mainSheet.leftColumn.bonusLabel"}}</p>
+    </div>
+
+    {{#each data.abilities as | ability key |}}
+      <div class="left-row">
+        <div class="ability-centering-box">
+          <input class="ability-defense" name="data.abilities.{{key}}.defense" value="{{ability.defense}}" data-dtype="Number"/>
+        </div>
+        <span class="ability-label">{{localize key}}</span>
+
+        <div class="ability-centering-box">
+          <span class="ability-bonus rollable" data-roll="d20+@abilities.{{key}}.bonus" data-label="{{ability.label}}">{{numberFormat ability.bonus decimals=0 sign=true}}</span>
+        </div>
+      </div>
+    {{/each}}
+
+    <div class="left-row header-row armor-heading-row">
+      <p>{{localize "mainSheet.leftColumn.defenseLabel"}}</p>
+      <p></p>
+      <p>{{localize "mainSheet.leftColumn.bonusLabel"}}</p>
+    </div>
+
+    <div class="left-row armor-row">
+      <div class="ability-centering-box">
+        <input class="ability-defense" name="data.attributes.armor.defense" value="{{data.attributes.armor.defense}}"
+          data-dtype="Number" />
+      </div>
+      <span class="ability-label">{{localize "mainSheet.leftColumn.armorLabel"}}</span>
+
+      <div class="ability-centering-box">
+        <span class="ability-bonus rollable" data-roll="d20+@attributes.armor.bonus"
+          data-label="{{data.attributes.armor.label}}">{{numberFormat data.attributes.armor.bonus decimals=0 sign=true}}</span>
+      </div>
+    </div>
+
+    <div class="left-row header-row HP-heading-row">
+      <p>{{localize "mainSheet.leftColumn.HPMaxLabel"}}</p>
+      <p></p>
+      <p>{{localize "mainSheet.leftColumn.HPCurrentLabel"}}</p>
+    </div>
+
+    <div class="left-row HP-row">
+      <div class="ability-centering-box">
+        <input class="ability-defense" name="data.health.max" value="{{data.health.max}}"
+          data-dtype="Number" />
+      </div>
+      <span class="ability-label">{{localize "mainSheet.leftColumn.HPLabel"}}</span>
+
+      <div class="ability-centering-box">
+        <input class="ability-defense" name="data.health.value" value="{{data.health.value}}"
+          data-dtype="Number" />
+      </div>
+    </div>
+
+
+    <div class="dice-tray">
+      <img class="dice-icon d20 rollable" data-roll="d20" data-label="{{localize 'rollLabels.d20'}}"
+        src="systems/miasmaAndMonsters/img/dice/d20.svg">
+      <img class="dice-icon 2d6 rollable" data-roll="2d6" data-label="{{localize 'rollLabels.2d6'}}"
+        src="systems/miasmaAndMonsters/img/dice/2d6.svg">
+      <img class="dice-icon d10 rollable" data-roll="d10" data-label="{{localize 'rollLabels.d10'}}"
+        src="systems/miasmaAndMonsters/img/dice/d10.svg">
+      <img class="dice-icon d8 rollable" data-roll="d8" data-label="{{localize 'rollLabels.d8'}}"
+        src="systems/miasmaAndMonsters/img/dice/d8.svg">
+      <img class="dice-icon d6 rollable" data-roll="d6" data-label="{{localize 'rollLabels.d6'}}"
+        src="systems/miasmaAndMonsters/img/dice/d6.svg">
+      <img class="dice-icon d4 rollable" data-roll="d4" data-label="{{localize 'rollLabels.d4'}}"
+        src="systems/miasmaAndMonsters/img/dice/d4.svg">
+
+    </div>
+
+
+  </section>
+
+
+
+  {{!-- Notes and Names --}}
+  <div class="middle-col">
+
+    <div class="name-exp-lvl-bar">
+
+      <div class="input-bar name">
+        <label for="name">{{localize "mainSheet.midColumn.nameLabel"}}</label>
+        <input type="text" name="name" value="{{actor.name}}" data-dtype="String" placeholder="Name..."/>
+      </div>
+
+      <div class="input-bar xp">
+        <label for="data.attributes.exp.value">{{localize "mainSheet.midColumn.XPLabel"}}</label>
+        <input type="text" name="data.attributes.exp.value" value="{{data.attributes.exp.value}}" data-dtype="String" placeholder="Name..."/>
+      </div>
+
+      <div class="input-bar lvl">
+        <label for="data.attributes.level.value">{{localize "mainSheet.midColumn.levelLabel"}}</label>
+        <input type="text" name="data.attributes.level.value" value="{{data.attributes.level.value}}" data-dtype="String" placeholder="Name..."/>
+      </div>
+
+    </div>
+
+    <div class="portrait-cell">
+      <label>{{localize "mainSheet.midColumn.notesBoxLabel"}}</label>
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+
+      <div class="settings-panel">
+        <i class="fas fa-cog settings-hoverover"></i>
+        <div class="generate-character centerer">{{localize "mainSheet.midColumn.generateCharacterButtonLabel"}}</div>
+      </div>
+
+    </div>
+
+    <div class="notes-cell">
+      {{editor content=data.notes target="data.notes" editable=editable owner=owner button=true}}
+    </div>
+
+  </div>
+
+  {{!-- Item Slots Column --}}
+  <section class="right-col">
+    <div class="item-header">
+      <label>{{localize "mainSheet.rightColumn.itemSlotsLabel"}}</label>
+    </div>
+
+    <div class="slots-remaining">
+      <label>{{localize "mainSheet.rightColumn.slotsRemainingLabel"}}</label>
+      <span class="itemslot-indicator">{{data.attributes.slotsremaining}}</span>
+      <span>{{localize "mainSheet.of"}}</span>
+      <span class="itemslot-indicator">{{data.abilities.con.defense}}</span>
+    </div>
+
+    <div class="item-slots">
+      <div class="item-row item-head-row">
+        <div></div>
+        <div class="item-name">{{localize "mainSheet.rightColumn.itemHeaderName"}}</div>
+        <div class="item-slots-header item-full-centerer">{{localize "mainSheet.rightColumn.itemHeaderSlots"}}</div>
+        <div class="item-controls add-item">
+          <a class="item-create" title="Create item" data-type="item"><i class="fas fa-plus"></i></a>
+        </div>
+      </div>
+
+      {{#each actor.items as |item id|}}
+        <div class="item item-row item-control item-edit" data-item-id="{{item._id}}" draggable="true">
+          <div class="item-centerer">
+            <img src="{{item.img}}" title="{{item.name}}" width="20" height="20" />
+          </div>
+
+          <div class="item-centerer">
+            {{item.name}}
+          </div>
+
+          <div class="item-full-centerer">
+            {{item.data.slotstaken}}
+          </div>
+
+          <div class="item-controls">
+            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        </div>
+
+      {{/each}}
+    </div>
+
+    <div class="coin-divider"></div>
+
+    <div class="coins">
+      <label>{{localize "mainSheet.rightColumn.copperName"}}</label>
+      <div class="coin-input-centerer">
+        <input type="String" name="data.coins.copper" value="{{data.coins.copper}}" data-dtype="Number"/>
+      </div>
+      
+      <label>{{localize "mainSheet.rightColumn.silverName"}}</label>
+      <div class="coin-input-centerer">
+        <input type="String" name="data.coins.silver" value="{{data.coins.silver}}" data-dtype="Number"/>
+      </div>
+
+      <label>{{localize "mainSheet.rightColumn.goldName"}}</label>
+      <div class="coin-input-centerer">
+        <input type="String" name="data.coins.gold" value="{{data.coins.gold}}" data-dtype="Number"/>
+      </div>
+      
+      <label>{{localize "mainSheet.rightColumn.platinumName"}}</label>
+      <div class="coin-input-centerer">
+        <input type="String" name="data.coins.platinum" value="{{data.coins.platinum}}" data-dtype="Number"/>
+      </div>
+    </div>
+
+  </section>
+
+</form>

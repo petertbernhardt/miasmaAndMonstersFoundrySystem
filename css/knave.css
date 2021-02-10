@@ -1,0 +1,953 @@
+  @import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+  /* Global styles */
+  .window-app {
+    font-family: "Averia Libre", sans-serif;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: none;
+  }
+
+  .form-fields {
+    flex: 1 !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border: none;
+    border-radius: 1px;
+  }
+
+  .window-app .window-content {
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+    background-image: none;
+
+    padding: 0;
+  }
+
+  .rollable:hover, .rollable:focus {
+    text-shadow: 0 0 10px red;
+    cursor: pointer;
+  }
+
+  /* Overall */
+  .miasmaAndMonsters-sheet-grid {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 220px 1fr 300px;
+    grid-template-rows: 1fr;
+
+    padding: 8px;
+
+  }
+
+  .item .window-content,
+  .form .window-content,
+  .scene-sheet .window-content,
+  .roll-table-config .window-content,
+  .compendium .window-content,
+  .filepicker .window-content,
+  .token-sheet .window-content,
+  .dialog .window-content {
+    padding: 8px;
+  }
+
+  .centerer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .verticalign {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Left Column - Ability Scores. Defense and Hit Points */
+  .left-col {
+    height: 504px;
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .left-col input {
+    border: none;
+    font-family: "Averia Libre";
+    background-color: #e4e5e6;
+    border-radius: 5px;
+  }
+
+  .left-col img {
+    border: none;
+  }
+
+  .left-col .header-row {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  .left-col .left-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    margin-bottom: 3px;
+  }
+
+  .left-col .left-row .ability-centering-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-col .left-row .ability-defense {
+    width: 50px;
+    font-size: 20pt;
+    text-align: center;
+  }
+
+  .left-col .left-row .ability-label {
+    font-size: 25pt;
+    font-family: "IM Fell English";
+
+  }
+
+  .left-col .left-row .ability-bonus {
+    font-size: 20pt;
+  }
+
+  /* Armor */
+  .left-col .armor-heading-row {
+    border-top: solid 2px #333333;
+  }
+
+  .left-col .left-row.armor-row .ability-label {
+    font-size: 18pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-col .left-row.armor-row {
+    margin-bottom: 10px;
+
+  }
+
+  /* Hp */
+  .left-col .HP-heading-row {
+    border-top: solid 2px black;
+  }
+
+  .left-col .left-row.HP-row .ability-label {
+    font-size: 18pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dice Tray */
+  .left-col .dice-tray {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15px;
+  }
+
+  .left-col .dice-tray .dice-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+
+
+
+
+  /***********************/
+  /* Middle Column       */
+  /***********************/
+  .middle-col {
+    width: 100%;
+    height: 100%;
+
+    border: solid 2px #333333;
+    display: grid;
+    grid-template-rows: 45px auto 1fr;
+    grid-template-columns: 1fr;
+
+    overflow: hidden;
+
+  }
+
+  .middle-col .name-exp-lvl-bar {
+    display: grid;
+    grid-template-columns: 6fr 2fr 1fr;
+    border-bottom: solid 2px #333333;
+  }
+
+  .middle-col .input-bar {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 3px;
+  }
+
+
+  .middle-col .input-bar label {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  .middle-col .input-bar input {
+    background-color: white;
+    border: none;
+    text-align: center;
+    font-size: 14pt;
+  }
+
+  .middle-col .xp {
+    border-left: solid 2px #333333;
+    border-right: solid 2px #333333;
+  }
+
+  /* Portrait and Settings */
+  .portrait-cell {
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .portrait-cell label {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+
+  .portrait-cell .settings-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 15px;
+    width: 14px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+  }
+
+  .portrait-cell .settings-panel:hover {
+    width: 150px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition-duration: 0.3s;
+    color: white;
+    border-bottom-left-radius: 5px;
+  }
+
+  .portrait-cell .settings-panel .settings-hoverover {
+    position: absolute;
+    right: 0;
+    top: 1px;
+  }
+
+  .portrait-cell .settings-panel .generate-character {
+    position: absolute;
+    text-align: center;
+    right: 35px;
+    top: 25px;
+    width: 80px;
+    height: 50px;
+    line-height: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-bottom: solid 5px #e4e5e6;
+  }
+
+  .portrait-cell .settings-panel .generate-character:active {
+    top: 30px;
+    height: 45px;
+    border-bottom: none;
+  }
+
+
+
+
+  /* Notes */
+
+  .notes-cell {
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+  }
+
+
+  .notes-cell .editor {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    font-family: "Averia Libre" !important;
+  }
+
+  .notes-cell .editor-content {
+    width: 100%;
+    height: 100%;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    overflow-y: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+
+
+  /************************************/
+  /* Right Column - Item Slots        */
+  /************************************/
+  .right-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 45px auto 1fr 1px auto; /* The 1px is for the coin divider */
+    border: solid 2px #333333;
+    border-left: none;
+    height: 504px;
+    overflow: hidden;
+  }
+
+  .right-col .item-slots {
+    overflow-y: scroll;
+  }
+
+  .right-col .item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 2px #333333;
+
+    position: relative;
+  }
+
+  .right-col .item-header label {
+    font-size: 20pt;
+    font-family: "IM Fell English";
+    font-weight: bold;
+    margin-bottom: -5px;
+  }
+
+  /* Remaining Slots Indicator */
+  .right-col .slots-remaining {
+    width: 100%;
+    
+    margin-top: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-col .slots-remaining span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-col .slots-remaining .itemslot-indicator {
+    width: 40px;
+    background-color: #e4e5e6;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 20px;
+    border-radius: 5px;
+  }
+
+  /* Individual Items */
+  .right-col .item-row {
+    display: grid;
+    grid-template-columns: 25px 1fr 50px 50px;
+    grid-template-rows: 27px;
+
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 5px;
+
+    border: solid 1px #333333;
+    border-radius: 5px;
+  }
+
+  .right-col .item-row .item-name {
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+  }
+
+
+  .right-col .item-row .item-controls {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 5px;
+  }
+
+  .right-col .item-row.item-head-row {
+    font-weight: bold;
+    border: none;
+    border-bottom: solid 1px black;
+    border-radius: 0px;
+  }
+
+  .right-col .item-row.item-head-row:hover {
+    background-color: white;
+    cursor: auto;
+  }
+
+  .right-col .item-row .item-centerer {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+  }
+
+  .right-col .item-row .item-full-centerer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+  }
+
+  .right-col .item-row:hover {
+    background-color: #e4e5e6;
+    cursor: pointer;
+  }
+
+  .right-col .item-row .item-delete {
+    display: none;
+  }
+
+  .right-col .item-row:hover .item-delete {
+    background-color: #e4e5e6;
+    display: block;
+  }
+
+  .right-col .item-row img {
+    border: none;
+  }
+
+  .right-col .coin-divider {
+    background-color: black;
+    width: auto;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+
+  .right-col .coins {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
+    grid-template-rows: 27px;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-family: "Averia Libre";
+  }
+
+  .right-col .coins label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .right-col .coins .coin-input-centerer {
+    display: flex;
+    align-items: center;
+  }
+
+  .right-col .coins input {
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    border: none;
+    background-color: #e4e5e6;
+    border-radius: 5px;
+    font-family: "Averia Libre";
+    
+  }
+
+
+  /********************************/
+  /* Item Card                    */
+  /********************************/
+  .item form {
+    overflow: hidden;
+  }
+
+  .item-card-grid {
+    width: 100%;
+    height: 100%;
+
+    grid-gap: 3px;
+
+    display: grid;
+    grid-template:
+    "header header header" 50px
+    "quality quantity slotstaken" 30px
+    "description-label description-label description-label"20px
+    "description description description" 1fr / 1fr 1fr 1fr;
+
+    overflow: hidden;
+  }
+
+  .item-card-grid img {
+    height: 100%;
+  }
+
+  .item-card-grid .item-card-header {
+    display: flex;
+    grid-column: 1/4;
+  }
+
+  .item-card-grid .item-card-header input {
+    margin-left: 5px;
+    font-size: 40px;
+    font-family: "IM Fell English";
+    padding-bottom: -5px;
+    height: 100%;
+    background: none;
+    border: none;
+    border-bottom: solid 1px #333333;
+    border-radius: 0;
+  }
+
+  .item-card-grid .item-attribute-cell {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+  }
+
+  .item-card-grid .item-attribute-cell .item-attr-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item-card-grid .item-attribute-cell input {
+    text-align: center;
+  }
+
+  .item-card-grid .item-desc-label {
+    font-weight: bold;
+    border-bottom: solid 1px black;
+  }
+
+  .item-card-grid .item-desc {
+    grid-row: 4/5;
+    grid-column: 1/4;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+
+  .item-card-grid .item-editor {
+    height: 100%;
+  }
+
+  .item-card-grid .item-desc .editor {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .item-card-grid .item-desc .editor-content {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+
+
+  /*********************/
+  /* Rules Card        */
+  /*********************/
+  .rules-card-grid {
+    width: 100%;
+    height: 100%;
+
+    grid-gap: 3px;
+
+    display: grid;
+    grid-template:
+      "header name" 50px
+      "description description" 1fr / 50px 1fr;
+
+    overflow: hidden;
+  }
+
+  .rules-card-grid .centerer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rules-card-grid {
+  }
+
+  .rules-card-grid img {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+
+  .rules-card-grid .rule-name {
+    grid-column: 2/3;
+  }
+
+  .rules-card-grid .rule-name input {
+    margin-left: 5px;
+    font-size: 20px;
+    font-family: "IM Fell English";
+    background: none;
+    border: none;
+    padding-bottom: -5px;
+    height: 100%;
+    border-bottom: solid 1px #333333;
+    border-radius: 0;
+  }
+
+  .rules-card-grid .description {
+    grid-area: description;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .rules-card-grid .description .editor {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .rules-card-grid .description .editor-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  /***********************/
+  /* Monster Sheet       */
+  /***********************/
+
+  /* Height: 460, width: 340 */
+
+  .monster-sheet {
+    height: 100%;
+  }
+
+  .monster-grid {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template:
+    "name name" 30px
+    "image attributes" 100px
+    "ability-scores ability-scores" 60px
+    "attacks attacks" auto
+    "notes notes" 1fr
+    "dice-tray dice-tray" 40px / 100px 1fr;
+  }
+
+   /**************/
+  /* Name Input */
+  .monster-grid .name {
+    grid-area: name;
+
+  }
+
+  .monster-grid .name input {
+    font-family: "IM Fell English";
+    color: white;
+    border-radius: 0;
+    font-size: 24px;
+    background-color: black;
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+
+   /*****************/
+  /* Profile image */
+  .monster-grid .profile-img img {
+    height: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+   /******************/
+  /* Attributes     */
+  .monster-grid .attributes {
+    position: relative;
+    display: grid;
+    grid-template:
+    "hitdice currentHP maxHP" 1fr
+    "mutltiplier armorclass morale" 1fr / 1fr 1fr 1fr;
+    padding: 3px;
+  }
+
+  .monster-grid .attributes .monster-attribute {
+    flex-direction: column;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+
+  .monster-grid .attributes .monster-attribute span {
+    width: max-content;
+  }
+
+  .monster-grid .attributes .monster-attribute input {
+    text-align: center;
+    width: 60%;
+    margin-top: 2px;
+    height: auto;
+  }
+
+  .monster-grid .setting-selector {
+    transition-duration: 0.3s;
+    margin-top: 1px;
+    display: block;
+    font-size: 14px;
+    color: black;
+  }
+
+  .monster-grid .settings {
+    transition-duration: 0.3s;
+    color: white;
+    position: absolute;
+    width: 14px;
+    height: 15px;
+    right: 0;
+    top: 0;
+    padding-top: 1px;
+    overflow: hidden;
+    font-size: 0px;
+  }
+
+  .monster-grid .settings p,
+  .monster-grid .settings input {
+    display: none;
+  }
+
+
+  .monster-grid .settings .setting-selector {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .monster-grid .settings:hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    padding-top: 1px;
+    font-size: 12px;
+    transition-duration: 0.3s;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .monster-grid .settings:hover p,
+  .monster-grid .settings:hover input {
+    display: block;
+  }
+
+  .monster-grid .settings:hover .setting-selector {
+    transition-duration: 0.3s;
+    color: white;
+  }
+
+   /******************/
+  /* Ability Scores */
+  .monster-grid .abilities {
+    grid-area: ability-scores;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .monster-grid .abilities .monster-ability {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .monster-grid .abilities .monster-ability input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Averia Libre';
+  }
+
+  .monster-grid .abilities .rollable:hover {
+    background-color: #333333;
+  }
+
+  /* Attacks */
+  .attacks {
+    grid-area: attacks;
+  }
+  .attacks .attack-row {
+    display: grid;
+    grid-template-rows: 24px;
+    grid-template-columns: 24px 1fr 50px 1fr;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-bottom: 3px;
+  }
+
+  .attacks .attack-heading-row {
+    margin-bottom: 0px;
+  }
+
+  .attacks .attack-row input {
+    border: none;
+    background-color: #e4e5e6;
+    margin-left: 1px;
+    margin-right: 2px;
+  }
+
+  .attacks .attack-row img {
+    width: 20px;
+    height: 20px;
+    border: none;
+  }
+
+  .attacks .attack-row .bonus-label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .attacks .attack-heading-row p {
+    margin: 0;
+  }
+
+  .attacks .attack-heading-row .left-space-heading {
+    margin-left: 3px;
+  }
+
+  .attacks .attack-row .attack-bonus-input {
+    text-align: center;
+  }
+
+  .attacks .attack-row input {
+    height: 100%;
+  }
+
+  .attacks .attack-row .formcontainer {
+    position: relative;
+  }
+
+  .attacks .attack-row .delete-monster-attack {
+    display: none;
+  }
+
+  .attacks .attack-row:hover .delete-monster-attack {
+    position: absolute;
+    display: block;
+    right: 6px;
+  }
+
+   /*************/
+  /* Dice Tray */
+  .monster-grid .dice-tray {
+    grid-area: dice-tray;
+    background-color: black;
+  }
+
+  .monster-grid .dice-tray img {
+    width: 30px;
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+
+  /* Notes */
+  .monster-grid .notes {
+    width: 100%;
+    height: 100%;
+    grid-area: notes;
+    overflow: hidden;
+  }
+
+  .monster-grid .notes .editor {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .monster-grid .notes .editor-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    padding: 4px;
+  }
+
+  /************************/
+  /* Monster Chat Message */
+  /************************/
+  .mon-atk-msg .grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 20px 1fr;
+  }
+
+  .dice-roll.monster-attack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dice-roll .monster-damage-roll .dice-total {
+    font-size: 15px;
+    font-weight: normal;
+  }

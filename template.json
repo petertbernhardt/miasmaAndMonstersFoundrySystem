@@ -1,0 +1,143 @@
+{
+  "Actor": {
+    "types": ["character", "monster"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 4,
+          "min": 0,
+          "max": 4
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "notes": "",
+      "attributes": {
+        "level": {
+          "value": 1
+        },
+        "exp": {
+          "value": 0
+        },
+        "armor": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Armor"
+        },
+        "slotsremaining": 0
+        
+      },
+      "coins": {
+          "copper": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+      },
+      "abilities": {
+        "str": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Strength"
+        },
+        "dex": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Dexterity"
+        },
+        "con": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Constitution"
+        },
+        "int": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Intelligence"
+        },
+        "wis": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Wisdom"
+        },
+        "cha": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Charisma"
+        }
+      }
+
+    },
+    "monster": {
+      "templates": ["base"],
+      "options": {
+        "hitdiceabilities": true
+      },
+      "notes": "",
+      "attacks": {
+        "attack1": {
+          "name": "New Attack",
+          "bonus": 0,
+          "damageformula": "1d6"
+        }
+      },
+      "attributes": {
+        "hitdice": {
+          "amount": 1,
+          "multiplier": 4
+        },
+        "armorclass": 10,
+        "morale": 7
+      },
+      "abilities": {
+        "str": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Strength"
+        },
+        "dex": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Dexterity"
+        },
+        "con": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Constitution"
+        },
+        "int": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Intelligence"
+        },
+        "wis": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Wisdom"
+        },
+        "cha": {
+          "defense": 10,
+          "bonus": 0,
+          "label": "Charisma"
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "rules"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "slotstaken": 1,
+      "quantity": 1,
+      "quality": 1
+    },
+    "rules": {
+      "templates": ["base"] 
+    }
+  }
+}

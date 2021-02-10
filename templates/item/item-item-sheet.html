@@ -1,0 +1,52 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <div class="item-card-grid">
+        <div class="item-card-header">
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+            <input type="text" name="name" value="{{item.name}}">
+        </div>
+
+        <div class="item-attribute-cell">
+            <div class="item-attr-label">
+                <label for="data.slotstaken">{{localize "itemSheet.slotsUsed"}}</label>
+            </div>
+            <div class="item-attr-label">
+                <input type="text" name="data.slotstaken" value="{{data.slotstaken}}">
+            </div>
+        </div>
+
+        <div class="item-attribute-cell">
+            <div class="item-attr-label">
+                <label for="data.quantity">{{localize "itemSheet.quantity"}}</label>
+            </div>
+            <div class="item-attr-label">
+                <input type="text" name="data.quantity" value="{{data.quantity}}">
+            </div>
+        </div>
+
+        <div class="item-attribute-cell">
+            <div class="item-attr-label">
+                <label for="data.quality">{{localize "itemSheet.quality"}}</label>
+            </div>
+            <div class="item-attr-label">
+                <input type="text" name="data.quality" value="{{data.quality}}">
+            </div>
+        </div>
+
+
+
+        <div class="item-desc-label">
+            {{localize "itemSheet.description"}}
+        </div>
+
+
+        <div class="item-desc">
+            <div class="item-editor">
+                {{editor content=data.description target="data.description" editable=editable owner=owner button=true}}
+            </div>
+        </div>
+
+
+    </div>
+
+</form>

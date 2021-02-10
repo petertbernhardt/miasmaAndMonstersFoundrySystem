@@ -1,0 +1,82 @@
+{
+    "str": "STR",
+    "dex": "DEX",
+    "con": "CON",
+    "int": "INT",
+    "wis": "WIS",
+    "cha": "CHA",
+
+    "mainSheet": {
+        "of": "of",
+
+        "leftColumn": {
+
+            "defenseLabel": "DEFENSE",
+            "abilityLabel": "ABILITY",
+            "bonusLabel": "BONUS",
+            "armorLabel": "ARMOR",
+
+            "HPMaxLabel": "MAX",
+            "HPCurrentLabel": "CURRENT",
+            "HPLabel": "HP"
+        },
+
+        "midColumn": {
+            "nameLabel": "NAME",
+            "XPLabel": "XP",
+            "levelLabel": "LVL",
+
+            "notesBoxLabel": "PORTRAIT AND NOTES",
+            "generateCharacterButtonLabel": "Generate Character!"
+        },
+
+        "rightColumn": {
+            "itemSlotsLabel": "ITEM SLOTS",
+            "slotsRemainingLabel": "Slots Remaining: ",
+
+            "itemHeaderName": "Name",
+            "itemHeaderSlots": "Slots",
+            "platinumName": "PP",
+            "goldName": "GP",
+            "silverName": "SP",
+            "copperName": "CP"
+        }
+
+    },
+
+    "monsterSheet": {
+        "namePlaceHolder": "Name ...",
+        "hitDiceLabel": "Hit Dice",
+        "currentHPLabel": "Current HP",
+        "maxHPLabel": "Max HP",
+        "multiplierLabel": "Multiplier",
+        "armorClassLabel": "Armor Class",
+        "moraleLabel": "Morale",
+
+        "abilityScoreHitDiceOptionLabel": "Ability Scores based on Hit Dice",
+
+        "attackHeadingName": "Attack Name",
+        "attackHeadingBonus": "Bonus",
+        "attackHeadingDamage": "Damage Formula"
+    },
+
+    "itemSheet": {
+        "slotsUsed": "Slots Used",
+        "quantity": "Quantity",
+        "quality": "Quality",
+        "description": "Description",
+        "attributes": "Attributes",
+        "name": "Name",
+        "spellLevel": "Spell Level"
+    },
+
+    "rollLabels": {
+        "monsterAttack": "to attack!",
+        "d20": "a d20",
+        "2d6": "2d6",
+        "d10": "a d10",
+        "d8": "a d8",
+        "d6": "a d6",
+        "d4": "a d4"
+    }
+}

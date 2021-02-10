@@ -1,0 +1,17 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="rules-card-grid">
+
+
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+
+        <div class="centerer rule-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "itemSheet.name"}}"/>
+        </div>
+
+        {{!-- Description Tab --}}
+        <div class="description">
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+
+</form>

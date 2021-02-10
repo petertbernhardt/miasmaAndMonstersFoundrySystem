@@ -1,0 +1,113 @@
+<form class="{{cssClass}} monster-sheet" autocomplete="off">
+
+    <div class="monster-grid">
+
+        <div class="name">
+            <input type="text" name="name" value="{{actor.name}}" data-dtype="String" placeholder="{{localize "monsterSheet.namePlaceHolder"}}" />
+        </div>
+
+        <div class="profile-img">
+            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        </div>
+
+        <div class="attributes">
+            <div class="centerer monster-attribute">
+                <span>{{localize "monsterSheet.hitDiceLabel"}}</span>
+                <input type="text" name="data.attributes.hitdice.amount" value="{{data.attributes.hitdice.amount}}">
+            </div>
+
+            <div class="centerer monster-attribute">
+                <span>{{localize "monsterSheet.currentHPLabel"}}</span>
+                <input type="text" name="data.health.value" value="{{data.health.value}}">
+            </div>
+
+            <div class="centerer monster-attribute">
+                <span>{{localize "monsterSheet.maxHPLabel"}}</span>
+                <input type="text" name="data.health.max" value="{{data.health.max}}">
+            </div>
+
+            <div class="centerer monster-attribute">
+                <span>{{localize "monsterSheet.multiplierLabel"}}</span>
+                <input type="text" name="data.attributes.hitdice.multiplier" value="{{data.attributes.hitdice.multiplier}}">
+            </div>
+
+            <div class="centerer monster-attribute">
+                <span>{{localize "monsterSheet.armorClassLabel"}}</span>
+                <input type="text" name="data.attributes.armorclass" value="{{data.attributes.armorclass}}">
+            </div>
+
+            <div class="centerer monster-attribute">
+                <span>{{localize "monsterSheet.moraleLabel"}}</span>
+                <input type="text" name="data.attributes.morale" value="{{data.attributes.morale}}">
+            </div>
+
+
+            <div class="centerer settings">
+                <i class="fas fa-cog setting-selector"></i>
+
+                <p>{{localize "monsterSheet.abilityScoreHitDiceOptionLabel"}}</p>
+                <input type="checkbox" name="data.options.hitdiceabilities" {{checked data.options.hitdiceabilities}}>
+            </div>
+        </div>
+
+        <div class="abilities">
+            {{#each data.abilities as | ability key |}}
+            <div class="monster-ability">
+                <div class="centerer">
+                    <input class="ability-defense" name="data.abilities.{{key}}.defense" value="{{ability.defense}}"
+                        data-dtype="Number" />
+                </div>
+
+                <div class="centerer">
+                    <span class="ability-label">{{localize key}}</span>
+                </div>
+
+                <div class="centerer rollable" data-roll="d20+@abilities.{{key}}.bonus" data-label="{{ability.label}}">
+                    <span class="ability-bonus">{{numberFormat ability.bonus decimals=0 sign=true}}</span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="attacks">
+
+            <div class="attack-row attack-heading-row">
+                <div class="centerer rollable monster-new-attack"><i class="fas fa-plus"></i></div>
+                <p class="verticalign left-space-heading">{{localize "monsterSheet.attackHeadingName"}}</p>
+                <p class="bonus-label centerer">{{localize "monsterSheet.attackHeadingBonus"}}</p>
+                <p class="verticalign left-space-heading">{{localize "monsterSheet.attackHeadingDamage"}}</p>
+            </div>
+
+            {{#each data.attacks as | attack key |}}
+                <div class="attack-row" data-label="{{key}}">
+                    <div class="rollable centerer monster-attack-button"><img class="dice-icon d6" src="systems/miasmaAndMonsters/img/dice/d6.svg">
+                    </div>
+                    <div class="centerer atkname"><input type="text" class="" name="data.attacks.{{key}}.name" value="{{attack.name}}"></div>
+                    <div class="centerer"><input type="text" class="attack-bonus-input" name="data.attacks.{{key}}.bonus" value="{{attack.bonus}}"></div>
+                    <div class="centerer formcontainer">
+                        <input type="text" class="" name="data.attacks.{{key}}.damageformula" value="{{attack.damageformula}}">
+                        <i class="fas fa-trash delete-monster-attack rollable"></i>
+                    </div>
+                </div>
+            {{/each}}
+
+        </div>
+
+        <div class="notes">
+            {{editor content=data.notes target="data.notes" editable=editable owner=owner button=true}}
+        </div>
+
+        <div class="dice-tray centerer">
+            <img class="dice-icon d20 rollable" data-roll="d20 + {{data.attributes.hitdice.amount}}" data-label="to attack!" src="systems/miasmaAndMonsters/img/negative-dice/d20attack.svg">
+            <img class="dice-icon d20 rollable" data-roll="d20" data-label="{{localize 'rollLabels.d20'}}" src="systems/miasmaAndMonsters/img/negative-dice/d20.svg">
+            <img class="dice-icon 2d6 rollable" data-roll="2d6" data-label="{{localize 'rollLabels.2d6'}}" src="systems/miasmaAndMonsters/img/negative-dice/2d6.svg">
+            <img class="dice-icon d10 rollable" data-roll="d10" data-label="{{localize 'rollLabels.d10'}}" src="systems/miasmaAndMonsters/img/negative-dice/d10.svg">
+            <img class="dice-icon d8 rollable" data-roll="d8" data-label="{{localize 'rollLabels.d8'}}" src="systems/miasmaAndMonsters/img/negative-dice/d8.svg">
+            <img class="dice-icon d6 rollable" data-roll="d6" data-label="{{localize 'rollLabels.d6'}}" src="systems/miasmaAndMonsters/img/negative-dice/d6.svg">
+            <img class="dice-icon d4 rollable" data-roll="d4" data-label="{{localize 'rollLabels.d4'}}" src="systems/miasmaAndMonsters/img/negative-dice/d4.svg">
+
+        </div>
+
+    </div>
+
+</form>
